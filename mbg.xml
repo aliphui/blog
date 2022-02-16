@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context  id="DB2Tables"  targetRuntime="MyBatis3">
+
+        <!--不生成注释-->
+        <commentGenerator>
+            <property  name="suppressAllComments"  value="true"/>
+        </commentGenerator>
+
+        <!--数据库连接-->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Shanghai"
+                userId="root"
+                password="123456789">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property  name="forceBigDecimals"  value="false"/>
+        </javaTypeResolver>
+
+        <!--指定javaBean生成的位置-->
+        <javaModelGenerator
+                targetPackage="com.atguigu.blog.pojo"
+                targetProject=".\src\main\java">
+            <property  name="enableSubPackages"  value="true"/>
+            <property  name="trimStrings"  value="true"/>
+        </javaModelGenerator>
+
+        <!--mapper文件生成的位置-->
+        <sqlMapGenerator
+                targetPackage="mapper"
+                targetProject=".\src\main\resources">
+            <property  name="enableSubPackages"  value="true"/>
+        </sqlMapGenerator>
+
+        <!--指定dao接口生成的位置-->
+        <javaClientGenerator  type="XMLMAPPER"
+                              targetPackage="com.atguigu.blog.dao"
+                              targetProject=".\src\main\java">
+            <property  name="enableSubPackages"  value="true"/>
+        </javaClientGenerator>
+
+        <!--指定每张表的生成策略-->
+<!--        <table   schema="DB2ADMIN"-->
+<!--                 tableName="t_blog"-->
+<!--                 domainObjectName="Blog">-->
+<!--        </table>-->
+<!--        <table  schema="DB2ADMIN"-->
+<!--                tableName="t_comment"-->
+<!--                domainObjectName="Comment">-->
+<!--        </table>-->
+<!--        <table  schema="DB2ADMIN"-->
+<!--                tableName="t_tag"-->
+<!--                domainObjectName="Tag">-->
+<!--        </table>-->
+<!--        <table  schema="DB2ADMIN"-->
+<!--                tableName="t_type"-->
+<!--                domainObjectName="Type">-->
+<!--        </table>-->
+<!--        <table  schema="DB2ADMIN"-->
+<!--                tableName="t_user"-->
+<!--                domainObjectName="User">-->
+<!--        </table>-->
+        <table   schema="DB2ADMIN"
+                 tableName="t_blog_tag"
+                 domainObjectName="BlogAndTag">
+        </table>
+    </context>
+</generatorConfiguration>
+

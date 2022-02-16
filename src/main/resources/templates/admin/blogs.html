@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common::heat(博客管理)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客管理</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../static/css/me.css">
+</head>
+<body>
+<div id="app" v-cloak v-model="userInfo">
+  <!--导航-->
+  <nav th:replace="admin/common :: nav(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item">管理后台</h2>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="mini home icon"></i>博客</a>
+        <a href="./types.html" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+        <a href="./tags.html" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+        <div class="right m-item m-mobile-hide menu">
+          <div class="ui dropdown  item">
+            <div class="text">
+              <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+              李仁密
+            </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="#" class="item">注销</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+      <i class="sidebar icon"></i>
+    </a>
+  </nav>
+
+  <div class="ui attached pointing menu">
+    <div class="ui container">
+      <div class="right menu">
+        <a href="/admin/blogs-input.html" class="item">发布</a>
+        <a href="/admin/blogs.html" class="teal active item">列表</a>
+      </div>
+    </div>
+  </div>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+
+      <div class="ui success message" v-if="message != null && message != ''">
+        <i class="close icon" v-on:click="closeMsg()"></i>
+        <div class="header">提示：</div>
+        <p>{{message}}</p>
+      </div>
+
+      <form action="#" method="post" class="ui segment form" id="formData" v-model="formData">
+        <div class="inline fields">
+          <div class="field">
+            <input type="text" name="title" id="title" placeholder="标题" v-model="formData.title">
+          </div>
+          <div class="field">
+            <select name="typeId"  v-model="formData.typeId">
+              <option disabled value="">---请选择分类---</option>
+              <option v-bind:value="type.id" v-for="type in types">{{type.name}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" id="recommend" name="recommend"  v-model="formData.recommend" v-on:click="selectBlog()">
+              <label for="recommend">推荐</label>
+            </div>
+          </div>
+          <div class="field">
+            <button type="button" class="ui mini teal basic button" v-on:click="clearForm()">清空</button>
+            <button type="button" class="ui mini teal basic button" v-on:click="selectBlog()"><i class="search icon"></i>搜索</button>
+          </div>
+        </div>
+      </form>
+
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>标题</th>
+            <th>类型</th>
+            <th>推荐</th>
+            <th>状态</th>
+            <th>更新时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(blog,index) in blogs">
+            <td>{{index+1}}</td>
+            <td>{{blog.title}}</td>
+            <td>{{blog.typeId}}</td>
+            <td>{{blog.recommend ? '是':'否'}}</td>
+            <td>{{blog.published ? '发布':'草稿'}}</td>
+            <td>{{blog.createTime}}</td>
+            <td>
+              <a href="#" class="ui mini teal basic button" v-on:click="editBlog(blog.id)">编辑</a>
+              <a href="#" class="ui mini red basic button" v-on:click="deleteBlog(blog.id,blog.title)">删除</a>
+            </td>
+          </tr>
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="7">
+              <div class="ui mini pagination menu">
+                <a class=" item">上一页</a>
+                <a class=" item">下一页</a>
+              </div>
+              <a href="/admin/blogs-input.html" class="ui mini right floated teal basic button">新增</a>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="admin/common :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="three wide column">
+          <div class="ui inverted link list">
+            <div class="item">
+              <img th:src="@{/images/wechat.jpg}" class="ui rounded image" alt="" style="width: 110px">
+            </div>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">Email：lirenmi@163.com</a>
+            <a href="#" class="item m-text-thin">QQ：865729312</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+    </div>
+
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
+  <script>
+
+    var vm  =  new  Vue({
+      el: "#app",
+      data: {
+        userInfo: {},//用户信息
+        blogs: [],//博客列表信息
+        types: [],
+        formData: {
+          typeId: '',
+        },
+        message: ''
+      },
+      //钩子函数，VUE对象初始化完成后自动执行
+      created(){
+        this.selectUser();
+        this.blogList();
+        this.typeList();
+        this.message = '[[${message}]]';
+      },
+      methods: {
+        //查询用户信息
+        selectUser(){
+          axios.get("/admin/user").then((res)=>{
+            if (res.data.flag){
+              this.userInfo = res.data.data;
+            }else{
+              alert("查询用户信息失败");
+            }
+          })
+        },
+        //查询blog列表
+        blogList(){
+          axios.get("/admin/blog").then((res)=>{
+            if (res.data.flag){
+              this.blogs = res.data.data;
+            }else{
+              alert("查询blog信息失败");
+            }
+          })
+
+        },
+        //查询所有分类
+        typeList(){
+          axios.get("/admin/types").then((res)=>{
+            if (res.data.flag){
+              this.types = res.data.data;
+            }else{
+              alert("查询分类列表失败");
+            }
+          })
+        },
+
+        //条件搜索
+        selectBlog(){
+          axios.get("/admin/blog?"+$('#formData').serialize()).then((res)=>{
+            if (res.data.flag){
+              this.blogs = res.data.data;
+
+            }else{
+              alert("查询blog信息失败");
+            }
+          })
+        },
+        //删除博客
+        deleteBlog(id,title){
+
+          if (confirm("确定要删除【"+ title +"】吗？")){
+            axios.delete("/admin/blog/"+id).then((res)=>{
+              if (res.data.flag){
+                this.blogList();
+              }else{
+                alert("删除失败");
+              }
+            })
+          }
+        },
+
+        //跳转到编辑页
+        editBlog(id){
+            window.location.href = "/admin/blogs-input.html/"+id;
+        },
+
+        //清空搜索信息，并重新加载blog列表信息
+        clearForm(){
+          this.formData.title = '';
+          this.formData.typeId = '';
+          this.formData.recommend = false;
+
+          this.blogList();
+        },
+
+        //关闭消息提示
+        closeMsg(){
+          this.message = '';
+        },
+
+      },
+    })
+
+
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+
+
+  </script>
+</body>
+</html>

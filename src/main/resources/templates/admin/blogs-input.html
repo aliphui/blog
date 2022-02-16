@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common::heat(博客发布)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客发布</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+  <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+<div id="app" v-cloak>
+  <!--导航-->
+  <nav th:replace="admin/common :: nav(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item">管理后台</h2>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="mini home icon"></i>博客</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+        <div class="right m-item m-mobile-hide menu">
+          <div class="ui dropdown  item">
+            <div class="text">
+              <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+              李仁密
+            </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="#" class="item">注销</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+      <i class="sidebar icon"></i>
+    </a>
+  </nav>
+
+  <div class="ui attached pointing menu">
+    <div class="ui container">
+      <div class="right menu">
+        <a href="/admin/blogs-input.html" class="teal active item">发布</a>
+        <a href="/admin/blogs.html" class="item">列表</a>
+      </div>
+    </div>
+  </div>
+
+  <!--中间内容-->
+  <div  class="m-container m-padded-tb-big">
+    <div class="ui container">
+      <form id="formData" method="post" action="#" class="ui form" v-model="formData">
+
+        <div class="required field">
+          <div class="ui left labeled input">
+            <select name="source" id="source" class="ui compact teal basic label" style="width: 80px;height: 41px" v-model="formData.source">
+              <option value="原创">原创</option>
+              <option value="转载">转载</option>
+              <option value="翻译">翻译</option>
+            </select>
+            <input type="text" name="title" placeholder="标题" id="title" v-model="formData.title">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+
+            <div class="ui left labeled action input">
+
+              <label class="ui compact teal basic label">分类</label>
+              <select name="typeId"  v-model="formData.typeId">
+                <option disabled value="">---请选择分类---</option>
+                <option v-bind:value="type.id" v-for="type in typeAll">{{type.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left labeled action input">
+              <label class="ui compact teal basic label">标签</label>
+              <div style="margin-left: auto; margin-right: auto">
+                <span v-for="tag in tags">【{{tag.name}}】 </span>
+              </div>
+            </div>
+            <select name="tags" multiple v-model="tags">
+              <option v-bind:value="tag" v-for="tag in tagAll">{{tag.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left labeled input">
+            <label class="ui teal basic label">首图</label>
+            <input type="text" name="defaultPicture" placeholder="默认图片引用地址" v-model="formData.defaultPicture">
+          </div>
+        </div>
+
+        <!--markdown编辑器-->
+        <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.css}"/>
+        <div class="field">
+          <div id="md-content" style="z-index: 1 !important;">
+            <textarea placeholder="博客内容..." name="content" style="display: none" id="content" v-model="formData.content">
+            </textarea>
+          </div>
+        </div>
+
+        <div class="required field">
+          <textarea name="description" placeholder="博客描述..." maxlength="200" v-model="formData.description"></textarea>
+        </div>
+
+        <div class="inline fields">
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" id="recommend" name="recommend" class="hidden" v-model="formData.recommend">
+              <label for="recommend">推荐</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" id="copyright" name="copyright" class="hidden" v-model="formData.copyright">
+              <label for="copyright">转载声明</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" id="appreciation" name="appreciation" class="hidden"  v-model="formData.appreciation">
+              <label for="appreciation">赞赏</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" id="comment" name="comment" class="hidden" v-model="formData.comment">
+              <label for="comment">评论</label>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="published" id="published" v-model="formData.published">
+
+        <div class="ui right aligned container">
+          <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
+          <button type="button" class="ui secondary button" v-on:click="submitForm(false)">保存</button>
+          <button type="button" class="ui teal button"  v-on:click="submitForm(true)">发布</button>
+        </div>
+      </form>
+
+      <div class="ui error message" v-if="message != null && message != ''">
+        <i class="close icon" v-on:click="closeMsg()"></i>
+        <div class="header">提示：</div>
+        <p>{{message}}</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="admin/common :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="three wide column">
+          <div class="ui inverted link list">
+            <div class="item">
+              <img src="../../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
+            </div>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">Email：lirenmi@163.com</a>
+            <a href="#" class="item m-text-thin">QQ：865729312</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script th:src="@{/lib/editormd/editormd.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
+  <script>
+
+    var vm  =  new  Vue({
+      el: "#app",
+      data: {
+        formData: {
+          source: '原创',
+          typeId: '',
+          content: '',
+          recommend: false,
+          copyright: false,
+          appreciation: false,
+          comment: false,
+
+        },
+        userInfo: {},//用户信息
+        typeAll: [],//所有的分类
+        tagAll: [],//所有的tag
+        message: '',//提示信息
+        tags: [],//选中的tag
+      },
+      //钩子函数，VUE对象初始化完成后自动执行
+      created(){
+        this.selectUser();
+        this.typeList();
+        this.tagList();
+        this.selectBlog();
+      },
+      methods: {
+
+        //需要编辑的博客信息
+        selectBlog(){
+
+          //获取需要编辑的博客id
+          var id = '[[${id}]]';
+          if (id==null || id==''){
+            return false;
+          }
+          axios.get("/admin/blog/"+id).then((res)=>{
+            if (res.data.flag){
+              this.formData = res.data.data.blog;
+              this.tags = res.data.data.tags;
+            }else{
+              // alert("查询用户信息失败");
+            }
+          })
+
+        },
+
+        //查询用户信息
+        selectUser(){
+          axios.get("/admin/user").then((res)=>{
+            if (res.data.flag){
+              this.userInfo = res.data.data;
+            }else{
+              // alert("查询用户信息失败");
+            }
+          })
+        },
+        //查询所有分类
+        typeList(){
+          axios.get("/admin/types").then((res)=>{
+            if (res.data.flag){
+              this.typeAll = res.data.data;
+            }else{
+              alert("查询分类列表失败");
+            }
+          })
+        },
+        //查询所有标签
+        tagList(){
+          axios.get("/admin/tags").then((res)=>{
+            if (res.data.flag){
+              this.tagAll = res.data.data;
+            }else{
+              alert("查询标签列表失败");
+            }
+          })
+        },
+        //提交表单,发布博客
+        submitForm(isPublished){
+
+          //表单项是否为空验证
+          if ($.trim(this.formData.title) == null || $.trim(this.formData.title)  == ''){
+            this.message = '标题不能为空！';
+            return false;
+          };
+          if (this.formData.typeId == null || this.formData.typeId == ''){
+            this.message = '请选择分类类型！';
+            return false;
+          };
+          if ($("#content").text() == null || $("#content").text()  == ''){
+            this.message = '博客内容不能为空！';
+            return false;
+          };
+          if ($.trim(this.formData.description) == null || $.trim(this.formData.description)  == ''){
+            this.message = '博客描述不能为空！';
+            return false;
+          };
+          this.message = '';
+
+          //拼接tagId
+          var tagIg = '';
+          for (var i = 0; i < this.tags.length; i++) {
+            if (i == 0){
+              tagIg += '?';
+            }
+            tagIg += 'tagId=' + this.tags[i].id;
+
+            if (i < this.tags.length-1){
+              tagIg += '&';
+            }
+          }
+
+          $('#published').val(isPublished);
+
+          //判断是否有Id，有：修改博客，没有：新建博客
+          var id = '[[${id}]]';
+          //修改Blog
+          if (id !=null && id!=''){
+            axios.put("/admin/blog"+tagIg+"&id="+id,$("#formData").serialize()).then((res)=>{
+              if (res.data.flag){
+                if (isPublished){
+                  window.location.href = "/admin/blogs.html/publish";
+                }else {
+                  window.location.href = "/admin/blogs.html/save";
+                }
+              }else{
+                alert("失败");
+              }
+            })
+
+            return false;
+          }
+
+          //新建Blog
+          axios.post("/admin/blog"+tagIg,$("#formData").serialize()).then((res)=>{
+            if (res.data.flag){
+              if (isPublished){
+                window.location.href = "/admin/blogs.html/publish";
+              }else {
+                window.location.href = "/admin/blogs.html/save";
+              }
+            }else{
+              alert("失败");
+            }
+          })
+
+        },
+
+
+        //关闭消息提示
+        closeMsg(){
+         this.message = '';
+        },
+
+
+      },
+    })
+
+
+
+    //初始化Markdown编辑器
+    $(function() {
+      var contentEditor = contentEditor = editormd("md-content", {
+        width   : "100%",
+        height  : 640,
+        syncScrolling : "single",
+        path    : "/lib/editormd/lib/"
+      });
+
+    });
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+  </script>
+</body>
+</html>

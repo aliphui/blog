@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    druid:
+      username: root
+      password: 123456789
+      url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: java.text.SimpleDateFormat
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.blog.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+logging:
+  level:
+    root: info
+    com.atguigu: debug
+  file:
+    path: log/log.log
+
+server:
+  servlet:
+    session:
+      timeout: 6000
+
+blogger:
+  name: 'liphui'
+  qq: '1697715248'
+  wechat: 'aliphui'
+  email: 'aliphui@qq.com'
+  heatPhoto: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphoto.tuchong.com%2F1462326%2Ff%2F328196194.jpg&refer=http%3A%2F%2Fphoto.tuchong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647586303&t=d96f3268d2102f2c5bd16c664d3fbfd5'

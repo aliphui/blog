@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.blog.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.atguigu.blog.pojo.User">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="passward" jdbcType="VARCHAR" property="passward" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="heat_photo" jdbcType="VARCHAR" property="heatPhoto" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, nickname, username, passward, qq, wechat, email, type, heat_photo, create_time, 
+    update_time
+  </sql>
+  <select id="selectByExample" parameterType="com.atguigu.blog.pojo.UserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_user
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.atguigu.blog.pojo.UserExample">
+    delete from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.blog.pojo.User">
+    insert into t_user (id, name, nickname, 
+      username, passward, qq, 
+      wechat, email, type, 
+      heat_photo, create_time, update_time
+      )
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{passward,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, 
+      #{wechat,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{heatPhoto,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.blog.pojo.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="passward != null">
+        passward,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="wechat != null">
+        wechat,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="heatPhoto != null">
+        heat_photo,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="passward != null">
+        #{passward,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="heatPhoto != null">
+        #{heatPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.atguigu.blog.pojo.UserExample" resultType="java.lang.Long">
+    select count(*) from t_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=CHAR},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.passward != null">
+        passward = #{record.passward,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qq != null">
+        qq = #{record.qq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wechat != null">
+        wechat = #{record.wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.heatPhoto != null">
+        heat_photo = #{record.heatPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_user
+    set id = #{record.id,jdbcType=CHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      passward = #{record.passward,jdbcType=VARCHAR},
+      qq = #{record.qq,jdbcType=VARCHAR},
+      wechat = #{record.wechat,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      heat_photo = #{record.heatPhoto,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.blog.pojo.User">
+    update t_user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="passward != null">
+        passward = #{passward,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        wechat = #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="heatPhoto != null">
+        heat_photo = #{heatPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.blog.pojo.User">
+    update t_user
+    set name = #{name,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      passward = #{passward,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      wechat = #{wechat,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      heat_photo = #{heatPhoto,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+
+  <select id="selectByUsernameAndPassward" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_user where username=#{username} and passward=#{passward}
+  </select>
+</mapper>

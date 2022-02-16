@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/common :: head(博客管理登录)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客管理登录</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../../static/css/me.css">
+</head>
+<body>
+
+<br>
+<br>
+<br>
+ <div id="app" v-cloak class="m-container-small m-padded-tb-massive" style="max-width: 30em !important;">
+   <div class="ur container">
+     <div class="ui middle aligned center aligned grid">
+       <div class="column">
+         <h2 class="ui teal image header">
+           <div class="content">
+             管理后台登录
+           </div>
+         </h2>
+         <form class="ui large form">
+           <div class="ui  segment">
+             <div class="field">
+               <div class="ui left icon input">
+                 <i class="user icon"></i>
+                 <input type="text" name="username" placeholder="用户名" v-model="userForm.username">
+               </div>
+             </div>
+             <div class="field">
+               <div class="ui left icon input">
+                 <i class="lock icon"></i>
+                 <input type="password" name="password" placeholder="密码" v-model="userForm.passward">
+               </div>
+             </div>
+             <button type="button" class="ui fluid large teal button" v-on:click="login()">登   录</button>
+           </div>
+
+           <div  v-if="message != null && message != ''">
+             <div class="ui error mini message"></div>
+             <div class="ui mini negative message">{{message}}</div>
+           </div>
+
+         </form>
+
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
+
+<script>
+  var vm  =  new  Vue({
+    el:"#app",
+    data:{
+      message: "",
+      userForm: {},
+    },
+    methods: {
+      login(){
+
+        if (this.userForm.username == null || this.userForm.username == ''){
+          this.message = '请输入用户名';
+          return false;
+        }
+        if (this.userForm.passward == null || this.userForm.passward == ''){
+          this.message = '请输入密码';
+          return false;
+        }
+
+        axios.post("/admin/login",this.userForm).then((res)=>{
+
+          if (res.data.flag){
+            window.location.href = "/admin/index.html";
+          }else{
+            this.message = res.data.message;
+            //清空输入框中的数据
+            this.userForm.passward = '';
+          }
+        })
+      }
+    }
+
+  });
+
+</script>
+
+</body>
+</html>

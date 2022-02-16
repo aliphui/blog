@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/common :: head(标签新增)">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>标签新增</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../../static/css/me.css">
+
+  <!--页面渲染完成后显示-->
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app" v-cloak>
+  <!--导航-->
+  <nav th:replace="admin/common :: nav(3)"  class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+    <div class="ui container">
+      <div class="ui inverted secondary stackable menu">
+        <h2 class="ui teal header item">管理后台</h2>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini home icon"></i>博客</a>
+        <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
+        <a href="#" class="active m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+        <div class="right m-item m-mobile-hide menu">
+          <div class="ui dropdown  item">
+            <div class="text">
+              <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+              李仁密
+            </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <a href="#" class="item">注销</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+      <i class="sidebar icon"></i>
+    </a>
+  </nav>
+  <div class="ui attached pointing menu">
+    <div class="ui container">
+      <div class="right menu">
+        <a href="/admin/tags-input.html" class="active item">新增</a>
+        <a href="/admin/tags.html" class="teal  item">列表</a>
+      </div>
+    </div>
+  </div>
+
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+
+      <div class="ui message" v-bind:class="{ 'success': success, 'negative': error }" v-if="success==true || error==true">
+        <i class="close icon" v-on:click="closeMsg()"></i>
+        <div class="header">提示：</div>
+        <p>{{message}}</p>
+      </div>
+
+      <form  class="ui form" v-model="formData">
+        <input type="hidden" name="id" v-model="formData.id">
+        <div class=" field">
+          <div class="ui left labeled input">
+            <label class="ui teal basic label">名称</label>
+            <input type="text" name="name" placeholder="标签名称" v-on:keydown="onkeydown()" v-model="formData.name">
+            <input type="text" style="display: none"/>
+          </div>
+        </div>
+
+        <div class="ui right aligned container">
+          <button type="button" class="ui button" onclick="window.history.go(-1)" >返回</button>
+          <button type="button" class="ui teal button" v-on:click="create()">提交</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!--底部footer-->
+  <footer th:replace="admin/common :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <div class="ui center aligned container">
+      <div class="ui inverted divided stackable grid">
+        <div class="three wide column">
+          <div class="ui inverted link list">
+            <div class="item">
+              <img src="../../static/images/wechat.jpg" class="ui rounded image" alt="" style="width: 110px">
+            </div>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+            <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item m-text-thin">Email：lirenmi@163.com</a>
+            <a href="#" class="item m-text-thin">QQ：865729312</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header m-text-thin m-text-spaced ">Blog</h4>
+          <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2016 - 2017 Lirenmi Designed by Lirenmi</p>
+    </div>
+
+  </footer>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+  <script>
+
+    var vm  =  new  Vue({
+      el: "#app",
+      data: {
+        userInfo: {},//用户信息
+        formData: {
+          id: '',
+          name: ''
+        },//表单数据
+        success: false,//添加成功消息提示,true：显示， false：不显示
+        error: false,//添加失败消息提示
+        message: '',
+      },
+      //钩子函数，VUE对象初始化完成后自动执行
+      created(){
+        this.selectUser();
+      },
+      methods: {
+        //查询用户信息
+        selectUser(){
+          axios.get("/admin/user").then((res)=>{
+            if (res.data.flag){
+              this.userInfo = res.data.data;
+            }else{
+              alert("查询用户信息失败");
+            }
+          })
+        },
+
+        //输入框 回车提交表单
+        onkeydown(){
+          if (event.keyCode == 13){
+            this.create();
+          }
+        },
+
+        //提交
+        create(){
+
+          if (this.formData.name == null || this.formData.name == ''){
+            this.message = '请输入标签名！';
+            this.error = true;
+          }
+
+          axios.post("/admin/tags",this.formData).then((res)=>{
+            if (res.data.flag){
+              //新增成功,清空输入框
+              this.formData.name = '';
+              this.message = '添加成功！';
+              this.success = true;
+              this.error = false;
+            }else {
+              //添加失败
+              this.message = '添加失败！';
+              this.success = false;
+              this.error = true;
+            }
+          })
+
+        },
+
+        //关闭消息提示
+        closeMsg(){
+          this.success = false;
+          this.error = false;
+        },
+
+      },
+    })
+
+  </script>
+</body>
+</html>
