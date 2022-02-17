@@ -234,7 +234,8 @@
           }
           axios.get("/admin/blog/"+id).then((res)=>{
             if (res.data.flag){
-              this.formData = res.data.data.blog;
+              this.formData = res.data.data.blog;//content有时候赋值失败；
+              // $("#content").text(res.data.data.blog.content);
               this.tags = res.data.data.tags;
             }else{
               // alert("查询用户信息失败");
