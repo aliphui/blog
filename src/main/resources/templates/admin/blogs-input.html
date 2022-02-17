@@ -310,7 +310,7 @@
           }
 
           //设置是否发布；
-          $('#published').val(isPublished);
+          this.formData.published = isPublished;
           this.formData.content = $("#content").text();
 
           //判断是否有Id，有：修改博客，没有：新建博客
