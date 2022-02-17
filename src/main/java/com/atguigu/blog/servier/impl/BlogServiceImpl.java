@@ -55,8 +55,6 @@ public class BlogServiceImpl implements BlogService {
             return false;
         }
 
-        int iw = 3/0;
-
         //创建blog-tag关联关系
         if (tagId != null){
             for (int i = 0; i < tagId.length; i++) {
