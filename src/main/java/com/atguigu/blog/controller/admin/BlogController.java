@@ -22,7 +22,6 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
-
     /**
      * 创建博客
      */
@@ -43,8 +42,6 @@ public class BlogController {
      */
     @PutMapping
     public R update(Blog blog, String[] tagId, HttpSession session){
-
-        System.out.println(blog);
 
         //设置修改者id
         User user = (User) session.getAttribute("user");

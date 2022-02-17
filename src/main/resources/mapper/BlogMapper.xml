@@ -113,13 +113,13 @@
   </delete>
   <insert id="insert" parameterType="com.atguigu.blog.pojo.Blog">
     insert into t_blog (id, title, content,
-      default_picture, source, views,
+      default_picture, source, views,description,
       appreciation, copyright, comment,
       published, recommend, create_time,
       update_time, type_id, user_id
       )
     values (#{id,jdbcType=CHAR}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR},
-      #{defaultPicture,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, #{views,jdbcType=INTEGER},
+      #{defaultPicture,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, #{views,jdbcType=INTEGER},#{description,jdbcType=VARCHAR},
       #{appreciation,jdbcType=BIT}, #{copyright,jdbcType=BIT}, #{comment,jdbcType=BIT},
       #{published,jdbcType=BIT}, #{recommend,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{typeId,jdbcType=CHAR}, #{userId,jdbcType=CHAR}

@@ -1,5 +1,6 @@
 package com.atguigu.blog.pojo;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Blog {
@@ -7,9 +8,15 @@ public class Blog {
 
     private String title;
 
+    private String content;
+
+    private String defaultPicture;
+
     private String source;
 
     private Integer views;
+
+    private String description;
 
     private Boolean recommend;
 
@@ -21,19 +28,51 @@ public class Blog {
 
     private Boolean published;
 
-    private Date createTime;
+    private Timestamp createTime;
 
-    private Date updateTime;
-
-    private String content;
-
-    private String defaultPicture;
-
-    private String description;
+    private Timestamp updateTime;
 
     private String typeId;
 
     private String userId;
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", defaultPicture='" + defaultPicture + '\'' +
+                ", source='" + source + '\'' +
+                ", views=" + views +
+                ", description='" + description + '\'' +
+                ", recommend=" + recommend +
+                ", copyright=" + copyright +
+                ", appreciation=" + appreciation +
+                ", comment=" + comment +
+                ", published=" + published +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", typeId='" + typeId + '\'' +
+                ", userId='" + userId + '\'' +
+                '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public String getContent() {
         return content;
@@ -51,36 +90,12 @@ public class Blog {
         this.defaultPicture = defaultPicture;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
-    }
-
     public String getSource() {
         return source;
     }
 
     public void setSource(String source) {
-        this.source = source == null ? null : source.trim();
+        this.source = source;
     }
 
     public Integer getViews() {
@@ -89,6 +104,14 @@ public class Blog {
 
     public void setViews(Integer views) {
         this.views = views;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Boolean getRecommend() {
@@ -131,19 +154,19 @@ public class Blog {
         this.published = published;
     }
 
-    public Date getCreateTime() {
+    public Timestamp getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
     }
 
-    public Date getUpdateTime() {
+    public Timestamp getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -152,7 +175,7 @@ public class Blog {
     }
 
     public void setTypeId(String typeId) {
-        this.typeId = typeId == null ? null : typeId.trim();
+        this.typeId = typeId;
     }
 
     public String getUserId() {
@@ -160,6 +183,6 @@ public class Blog {
     }
 
     public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
+        this.userId = userId;
     }
 }

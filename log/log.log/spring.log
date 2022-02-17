@@ -388,3 +388,853 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2022-02-17 17:53:31.213 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
 2022-02-17 17:53:31.214 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 97f797ca276048909c335e5161a01f91(String)
 2022-02-17 17:53:31.215 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:38.224  WARN 28704 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 67000
+2022-02-17 17:54:38.224  WARN 28704 --- [http-nio-8080-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 66994
+2022-02-17 17:54:38.224  WARN 28704 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 67003
+2022-02-17 17:54:38.227  WARN 28704 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 91165
+2022-02-17 17:54:38.257 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:38.258 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:38.263 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:38.264 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:38.265 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8cedea17f6464f6798f5ae4de1ba8fae(String)
+2022-02-17 17:54:38.271 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:38.271 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:38.272 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8cedea17f6464f6798f5ae4de1ba8fae(String)
+2022-02-17 17:54:38.275 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:38.279 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:38.282 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:38.286 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:41.569 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:41.569 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:41.570 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:41.570 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:41.587 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:41.588 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:41.589 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:41.590 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:41.593 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:41.594 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:41.594 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:41.595 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:45.131 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:45.131 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:45.131 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:45.131 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:45.132 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:45.133 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:54:45.133 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:45.133 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:45.135 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:45.135 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:45.136 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:54:45.137 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:50.312 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:50.312 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:50.312 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:50.312 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:50.313 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:50.313 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:50.313 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:50.313 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 97f797ca276048909c335e5161a01f91(String)
+2022-02-17 17:54:50.316 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:50.317 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:50.317 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 97f797ca276048909c335e5161a01f91(String)
+2022-02-17 17:54:50.318 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:53.134 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:53.135 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:53.136 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:53.137 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:53.137 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:53.138 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:53.139 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:53.139 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:53.142 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:53.143 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:53.143 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:53.144 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:54:57.923 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:54:57.923 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:54:57.925 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:54:57.926 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:54:57.926 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:54:57.928 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:54:57.929 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:54:57.929 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:57.931 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:54:57.932 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:54:57.933 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:54:57.935 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:55:00.645 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:55:00.645 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:55:00.646 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:55:00.646 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:55:00.646 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:55:00.647 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:55:00.647 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:55:00.647 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:55:00.655 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:55:00.655 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:55:00.655 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:55:00.657 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:55:09.847 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:55:09.847 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:55:09.847 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:55:09.847 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:55:09.848 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:55:09.848 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:55:09.849 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:55:09.849 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:55:09.851 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:55:09.852 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:55:09.853 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:55:09.854 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:56:04.340 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:56:04.340 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:56:04.340 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:56:04.340 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:56:04.341 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:56:04.342 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:56:04.342 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:56:04.342 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:56:04.345 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:56:04.346 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:56:04.347 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:56:04.347 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:57:13.663  WARN 28704 --- [http-nio-8080-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 69315
+2022-02-17 17:57:13.664  WARN 28704 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 69321
+2022-02-17 17:57:13.666  WARN 28704 --- [http-nio-8080-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 69322
+2022-02-17 17:57:13.697 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:13.697 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:13.701 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:13.703 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 17:57:13.704 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 17:57:13.708 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 4
+2022-02-17 17:57:15.300 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:15.300 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:15.300 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:15.300 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:15.303 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:15.303 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:15.304 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:57:15.304 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:57:15.305 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:57:15.306 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:57:15.306 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:57:15.307 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:57:20.153 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:20.154 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:20.154 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:20.155 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:20.156 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:57:20.157 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:57:20.157 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:20.157 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:20.158 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:57:20.159 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:57:20.159 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: f0a248bf98044f18945d4779f3a0c5f3(String)
+2022-02-17 17:57:20.162 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:57:22.182 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:22.182 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:22.183 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 17:57:22.183 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:22.183 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 17:57:22.188 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 4
+2022-02-17 17:57:23.703 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:23.703 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:23.703 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:23.703 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:23.705 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:23.705 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:57:23.705 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:23.705 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:57:23.707 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:57:23.708 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:57:23.708 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: c7fcaf79027d448e8a65880883a77309(String)
+2022-02-17 17:57:23.710 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:57:37.000 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:37.000 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:37.000 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 17:57:37.001 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 17:57:37.002 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:37.004 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 4
+2022-02-17 17:57:39.064 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:39.064 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:39.065 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:39.065 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:39.066 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:39.066 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:39.067 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:57:39.067 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8cedea17f6464f6798f5ae4de1ba8fae(String)
+2022-02-17 17:57:39.068 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:57:39.069 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:57:39.069 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8cedea17f6464f6798f5ae4de1ba8fae(String)
+2022-02-17 17:57:39.070 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 0
+2022-02-17 17:57:41.208 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:41.209 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:41.210 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 17:57:41.211 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 17:57:41.211 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:41.214 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 4
+2022-02-17 17:57:44.919 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:44.919 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:44.920 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:44.920 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:44.920 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:44.920 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:58.201 DEBUG 28704 --- [http-nio-8080-exec-9] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 17:57:58.209 DEBUG 28704 --- [http-nio-8080-exec-9] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 146928379e75436d9e728d8101404002(String), sfsfe(String), (String), https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F032120114622%2F200321114622-4-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647147937&t=a189ff644fdc7afe21f58e362cf19deb(String), 原创(String), 0(Integer), null, null, null, true(Boolean), true(Boolean), 2022-02-17 17:57:58.2(Timestamp), 2022-02-17 17:57:58.2(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 17:57:58.225 DEBUG 28704 --- [http-nio-8080-exec-9] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 17:57:58.225 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 17:57:58.226 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: e01319cce4e24f1799c1dd28d0f66c24(String), 146928379e75436d9e728d8101404002(String), 700792352d32415dae4a977882048935(String)
+2022-02-17 17:57:58.228 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 17:57:58.336 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:58.336 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 17:57:58.336 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:58.336 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 17:57:58.337 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:58.339 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 5
+2022-02-17 17:57:59.682 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:57:59.682 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:57:59.684 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:57:59.684 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:57:59.684 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:57:59.684 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:57:59.684 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 17:57:59.685 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:57:59.685 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:57:59.686 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:57:59.686 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 17:57:59.688 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 17:58:05.971 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 17:58:05.972 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 17:58:05.972 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 17:58:05.972 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 17:58:05.973 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 17:58:05.973 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 17:58:05.975 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 17:58:05.975 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 17:58:05.976 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 17:58:05.976 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 17:58:05.977 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 17:58:05.978 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:02:15.067  INFO 28704 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-02-17 18:02:15.071  INFO 28704 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-02-17 18:02:15.157  INFO 28704 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 28704 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:02:15.157 DEBUG 28704 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:02:15.157  INFO 28704 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:02:15.422  INFO 28704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:02:15.423  INFO 28704 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:02:15.423  INFO 28704 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:02:15.436  INFO 28704 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:02:15.436  INFO 28704 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 276 ms
+2022-02-17 18:02:15.462  INFO 28704 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:02:15.489  INFO 28704 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2022-02-17 18:02:15.625  INFO 28704 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:02:15.658  INFO 28704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:02:15.672  INFO 28704 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:02:15.676  INFO 28704 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 0.552 seconds (JVM running for 557.301)
+2022-02-17 18:02:15.677  INFO 28704 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-17 18:02:15.814  INFO 28704 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 18:02:15.814  INFO 28704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-17 18:02:15.815  INFO 28704 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-17 18:02:27.532 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==>  Preparing: select id, name, nickname, username, passward, qq, wechat, email, type, heat_photo, create_time, update_time from t_user where username=? and passward=?
+2022-02-17 18:02:27.534 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==> Parameters: 123(String), a950788a262a084daf664d492e4880b8(String)
+2022-02-17 18:02:27.546 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : <==      Total: 1
+2022-02-17 18:02:29.242 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:02:29.243 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:02:29.243 DEBUG 28704 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:02:29.250 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:02:29.251 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:02:29.254 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 5
+2022-02-17 18:02:30.831 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:02:30.831 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:02:30.833 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:02:30.833 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:02:30.833 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:02:30.834 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:02:30.834 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 18:02:30.835 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:02:30.835 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:02:30.835 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:02:30.836 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 146928379e75436d9e728d8101404002(String)
+2022-02-17 18:02:30.837 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:02:36.688 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:02:36.688 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:02:36.688 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:02:36.688 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:02:36.690 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:02:36.691 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:02:49.329 DEBUG 28704 --- [http-nio-8080-exec-6] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:02:49.331 DEBUG 28704 --- [http-nio-8080-exec-6] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String), sfsfe(String), (String), https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F032120114622%2F200321114622-4-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647147937&t=a189ff644fdc7afe21f58e362cf19deb(String), 原创(String), 0(Integer), 原创(String), null, null, true(Boolean), true(Boolean), null, 2022-02-17 18:02:49.328(Timestamp), 2022-02-17 18:02:49.328(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:02:49.344 DEBUG 28704 --- [http-nio-8080-exec-6] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:02:49.345 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:02:49.345 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 7324aeac3ad54a2babf7a6bb944f8e14(String), 697461d122964fea8c99fb621576fcd7(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:02:49.346 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:02:49.456 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:02:49.456 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:02:49.457 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:02:49.457 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:02:49.458 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:02:49.460 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:02:51.513 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:02:51.514 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:02:51.515 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:02:51.515 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:02:51.516 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:02:51.516 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:02:51.516 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:02:51.517 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:02:51.518 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:02:51.518 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:02:51.519 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:02:51.519 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:03:05.398 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:03:05.398 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:03:05.398 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:03:05.398 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:03:05.399 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:03:05.405 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:03:07.752 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:03:07.752 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:03:07.753 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:03:07.753 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:03:07.754 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:03:07.754 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:03:07.754 DEBUG 28704 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:03:07.754 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:03:07.756 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:03:07.757 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:03:07.757 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:03:07.758 DEBUG 28704 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:04:15.357  WARN 28704 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 67597
+2022-02-17 18:04:15.357  WARN 28704 --- [http-nio-8080-exec-10] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 67602
+2022-02-17 18:04:15.359  WARN 28704 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 83843
+2022-02-17 18:04:15.383 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:04:15.384 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:04:15.390 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:04:15.391 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:04:15.391 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:04:15.393 DEBUG 28704 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:04:16.881 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:04:16.881 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:04:16.882 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:04:16.882 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:04:16.884 DEBUG 28704 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:04:16.894 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:04:42.461 DEBUG 28704 --- [http-nio-8080-exec-1] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:04:42.462 DEBUG 28704 --- [http-nio-8080-exec-1] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 63326ad6c1894b7a945cf051ef4f6bac(String), 测试(String), (String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), 0(Integer), 原创(String), null, true(Boolean), null, true(Boolean), null, 2022-02-17 18:04:42.461(Timestamp), 2022-02-17 18:04:42.461(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:04:42.473 DEBUG 28704 --- [http-nio-8080-exec-1] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:04:42.474 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:04:42.474 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: f7fc287a7eb74884845bf2163eaf305c(String), 63326ad6c1894b7a945cf051ef4f6bac(String), 700792352d32415dae4a977882048935(String)
+2022-02-17 18:04:42.476 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:04:42.593 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:04:42.593 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:04:42.594 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:04:42.594 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:04:42.595 DEBUG 28704 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:04:42.597 DEBUG 28704 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 7
+2022-02-17 18:04:45.884 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:04:45.884 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:04:45.884 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:04:45.885 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 63326ad6c1894b7a945cf051ef4f6bac(String)
+2022-02-17 18:04:45.886 DEBUG 28704 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:04:45.888 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:04:45.888 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:04:45.888 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:04:45.888 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:04:45.889 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 63326ad6c1894b7a945cf051ef4f6bac(String)
+2022-02-17 18:04:45.891 DEBUG 28704 --- [http-nio-8080-exec-6] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:04:45.891 DEBUG 28704 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:12:56.814  INFO 31008 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 31008 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:12:56.815 DEBUG 31008 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:12:56.815  INFO 31008 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:12:56.866  INFO 31008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-17 18:12:56.867  INFO 31008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-17 18:12:57.767  INFO 31008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:12:57.774  INFO 31008 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:12:57.774  INFO 31008 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:12:57.832  INFO 31008 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:12:57.833  INFO 31008 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 965 ms
+2022-02-17 18:12:57.930  INFO 31008 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:12:58.036  INFO 31008 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-02-17 18:12:58.419  INFO 31008 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:12:58.606  INFO 31008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:12:58.638  INFO 31008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:12:58.649  INFO 31008 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 2.252 seconds (JVM running for 3.181)
+2022-02-17 18:16:16.180  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 24960 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:16:16.181 DEBUG 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:16:16.181  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:16:16.225  INFO 24960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-17 18:16:16.225  INFO 24960 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-17 18:16:17.199  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:16:17.206  INFO 24960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:16:17.207  INFO 24960 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:16:17.277  INFO 24960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:16:17.277  INFO 24960 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1050 ms
+2022-02-17 18:16:17.372  INFO 24960 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:16:17.471  INFO 24960 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-02-17 18:16:17.893  INFO 24960 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:16:18.101  INFO 24960 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:16:18.139  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:16:18.150  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 2.393 seconds (JVM running for 3.463)
+2022-02-17 18:16:18.219  INFO 24960 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 18:16:18.220  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-17 18:16:18.221  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-17 18:16:18.465  WARN 24960 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [230] milliseconds.
+2022-02-17 18:16:30.722 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==>  Preparing: select id, name, nickname, username, passward, qq, wechat, email, type, heat_photo, create_time, update_time from t_user where username=? and passward=?
+2022-02-17 18:16:30.771 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==> Parameters: 123(String), a950788a262a084daf664d492e4880b8(String)
+2022-02-17 18:16:30.794 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : <==      Total: 1
+2022-02-17 18:16:40.427 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:16:40.428 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:16:40.443 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 7
+2022-02-17 18:16:40.447 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:16:40.449 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:16:40.452 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:16:49.815 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:16:49.815 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:16:49.816 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:16:49.816 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:16:49.818 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:16:49.818 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:17:46.889 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:17:46.892 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String), cefasf(String), (String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), 0(Integer), fesfsefe(String), null, true(Boolean), null, true(Boolean), null, 2022-02-17 18:17:46.889(Timestamp), 2022-02-17 18:17:46.889(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:17:46.905 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:17:46.907 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:17:46.907 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: c39ff90f31844cddbf07f4184778898e(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:17:46.909 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:17:47.020 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:17:47.020 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:17:47.021 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:17:47.021 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:17:47.023 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:17:47.027 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:17:49.412 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:17:49.414 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:17:49.414 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:17:49.414 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:17:49.416 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:17:49.417 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:17:49.417 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:17:49.420 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:17:49.420 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:17:49.422 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:17:49.422 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:17:49.425 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:18:31.608 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:18:31.611 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: cefasf(String), tyut(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), fesfsefe(String), null, true(Boolean), null, true(Boolean), null, 2022-02-17 18:18:31.607(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String), 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:31.617 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:18:31.618 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:18:31.618 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:31.623 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:18:31.624 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:18:31.626 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 3120c2b0632e47f18d97e5fa779acd61(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:18:31.629 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:18:31.736 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:18:31.737 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:18:31.737 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:18:31.737 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:18:31.739 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:18:31.745 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:18:33.366 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:18:33.366 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:18:33.368 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:18:33.369 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:18:33.369 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:18:33.369 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:33.370 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:18:33.373 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:18:33.373 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:18:33.375 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:18:33.375 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:33.378 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:18:47.348 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:18:47.349 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: cefasf(String), tyut(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), y(String), null, true(Boolean), null, true(Boolean), null, 2022-02-17 18:18:47.347(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String), 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:47.364 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:18:47.364 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:18:47.365 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:47.366 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:18:47.367 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:18:47.368 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: b23c20769ae84b1797daa0b5ca87d434(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:18:47.372 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:18:47.477 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:18:47.477 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:18:47.478 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:18:47.478 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:18:47.478 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:18:47.489 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:18:49.661 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:18:49.662 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:18:49.662 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:18:49.663 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:18:49.664 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:18:49.664 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:18:49.664 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:49.665 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:18:49.667 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:18:49.668 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:18:49.669 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:18:49.671 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:19:31.114 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:19:31.114 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:19:31.115 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:19:31.116 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:19:31.116 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:19:31.118 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:19:31.118 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:19:31.119 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:31.122 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:19:31.122 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:19:31.123 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:31.126 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:19:37.250 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:19:37.251 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: cefasf(String), tyut(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), y(String), null, true(Boolean), null, true(Boolean), null, 2022-02-17 18:19:37.25(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String), 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:37.254 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:19:37.255 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:19:37.255 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:37.258 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:19:37.259 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:19:37.260 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: c24284e254f3488382f5915890325ba4(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:19:37.263 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:19:37.356 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:19:37.356 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:19:37.356 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:19:37.357 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:19:37.358 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:19:37.361 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:19:39.186 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:19:39.186 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:19:39.186 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:19:39.186 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:19:39.187 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:19:39.188 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:19:39.188 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:19:39.188 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:39.189 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:19:39.191 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:19:39.191 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:39.193 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:19:51.207 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:19:51.208 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: cefasf(String), tyut(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), y(String), null, true(Boolean), true(Boolean), true(Boolean), null, 2022-02-17 18:19:51.207(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String), 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:51.221 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:19:51.222 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:19:51.222 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:51.225 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:19:51.226 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:19:51.227 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 02b07abb397e4192b84159d2c59f0918(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:19:51.229 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:19:51.332 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:19:51.333 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:19:51.333 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:19:51.333 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:19:51.333 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:19:51.339 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:19:52.524 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:19:52.524 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:19:52.524 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:19:52.524 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:19:52.525 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:19:52.526 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:52.526 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:19:52.526 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:19:52.528 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:19:52.528 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:19:52.529 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:19:52.530 DEBUG 24960 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:20:01.440 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:20:01.441 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: cefasf(String), tyut(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), yfefe(String), true(Boolean), true(Boolean), true(Boolean), true(Boolean), null, 2022-02-17 18:20:01.44(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String), 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:20:01.446 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:20:01.447 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:20:01.447 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:20:01.448 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:20:01.450 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:20:01.450 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 86fb8134774b43f59d5f94a4abb08e93(String), 8572560ea0fa4011a7b10e6bc27dc288(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:20:01.452 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:20:01.557 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:20:01.557 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:20:01.557 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:20:01.558 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:20:01.560 DEBUG 24960 --- [http-nio-8080-exec-2] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:20:01.560 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:21:16.320  WARN 24960 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 74748
+2022-02-17 18:21:16.321  WARN 24960 --- [http-nio-8080-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 74751
+2022-02-17 18:21:16.322  WARN 24960 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 83796
+2022-02-17 18:21:16.362 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:21:16.362 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:21:16.365 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:21:16.365 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:21:16.366 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:21:16.367 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:21:35.369 DEBUG 24960 --- [http-nio-8080-exec-8] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:21:35.371 DEBUG 24960 --- [http-nio-8080-exec-8] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 5bf49ff3a2a249e18d98c7a16743277f(String), sfsfe(String), (String), https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F031H0111515%2F20031G11515-9-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647147650&t=6ad11525e98e3267e131dcdba0d5b108(String), 原创(String), 0(Integer), gard(String), true(Boolean), null, null, true(Boolean), null, 2022-02-17 18:21:35.369(Timestamp), 2022-02-17 18:21:35.369(Timestamp), 6aeaae0be1d1408ba70ecf2adba5d6e7(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:21:35.383 DEBUG 24960 --- [http-nio-8080-exec-8] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:21:35.383 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:21:35.383 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 477b08c997494266a0c8bfab9f9e74f4(String), 5bf49ff3a2a249e18d98c7a16743277f(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:21:35.384 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:21:35.511 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:21:35.511 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:21:35.511 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:21:35.511 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:21:35.512 DEBUG 24960 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:21:35.514 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 9
+2022-02-17 18:22:53.671  WARN 24960 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 78155
+2022-02-17 18:22:53.671  WARN 24960 --- [http-nio-8080-exec-6] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 78158
+2022-02-17 18:22:53.697 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:22:53.698 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:22:53.700 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:22:53.700 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:22:53.700 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:22:53.701 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:23:13.249 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:23:13.250 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: 86a245b110bd4de388a1dbe84f760c08(String), 1(String), (String), https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1113%2F032120114622%2F200321114622-4-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647147937&t=a189ff644fdc7afe21f58e362cf19deb(String), 原创(String), 0(Integer), hrh(String), null, null, true(Boolean), true(Boolean), null, 2022-02-17 18:23:13.249(Timestamp), 2022-02-17 18:23:13.249(Timestamp), 6aeaae0be1d1408ba70ecf2adba5d6e7(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:23:13.262 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:23:13.388 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:23:13.388 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:23:13.388 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:23:13.388 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:23:13.390 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:23:13.393 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 10
+2022-02-17 18:25:19.802  WARN 24960 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 126411
+2022-02-17 18:25:19.804  WARN 24960 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 126408
+2022-02-17 18:25:19.845 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:25:19.846 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:25:19.852 DEBUG 24960 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 10
+2022-02-17 18:25:19.853 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:25:19.854 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:25:19.855 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:25:20.640  INFO 24960 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2022-02-17 18:25:20.644  INFO 24960 --- [Thread-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2022-02-17 18:25:20.733  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 24960 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:25:20.734 DEBUG 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:25:20.734  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:25:21.050  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:25:21.051  INFO 24960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:25:21.051  INFO 24960 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:25:21.083  INFO 24960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:25:21.083  INFO 24960 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 347 ms
+2022-02-17 18:25:21.108  INFO 24960 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:25:21.136  INFO 24960 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2022-02-17 18:25:21.319  INFO 24960 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:25:21.378  INFO 24960 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:25:21.396  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:25:21.402  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 0.708 seconds (JVM running for 546.715)
+2022-02-17 18:25:21.403  INFO 24960 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-17 18:25:21.808  INFO 24960 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 18:25:21.809  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-17 18:25:21.811  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-02-17 18:25:23.206  INFO 24960 --- [Thread-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closing ...
+2022-02-17 18:25:23.206  INFO 24960 --- [Thread-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2022-02-17 18:25:23.264  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 24960 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:25:23.265 DEBUG 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:25:23.265  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:25:23.658  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:25:23.659  INFO 24960 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:25:23.659  INFO 24960 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:25:23.672  INFO 24960 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:25:23.672  INFO 24960 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 405 ms
+2022-02-17 18:25:23.711  INFO 24960 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:25:23.774  INFO 24960 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2022-02-17 18:25:24.022  INFO 24960 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:25:24.071  INFO 24960 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:25:24.096  INFO 24960 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:25:24.099  INFO 24960 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 0.859 seconds (JVM running for 549.413)
+2022-02-17 18:25:24.101  INFO 24960 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-02-17 18:25:30.286  INFO 24960 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 18:25:30.286  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-17 18:25:30.287  INFO 24960 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-17 18:25:30.334 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.b.d.U.selectByUsernameAndPassward    : ==>  Preparing: select id, name, nickname, username, passward, qq, wechat, email, type, heat_photo, create_time, update_time from t_user where username=? and passward=?
+2022-02-17 18:25:30.334 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.b.d.U.selectByUsernameAndPassward    : ==> Parameters: 123(String), a950788a262a084daf664d492e4880b8(String)
+2022-02-17 18:25:30.339 DEBUG 24960 --- [http-nio-8080-exec-1] c.a.b.d.U.selectByUsernameAndPassward    : <==      Total: 1
+2022-02-17 18:25:31.863 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:25:31.865 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:25:31.865 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:25:31.874 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:25:31.874 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:25:31.879 DEBUG 24960 --- [http-nio-8080-exec-8] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 10
+2022-02-17 18:25:33.901 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:25:33.901 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:25:33.901 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:25:33.902 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:25:33.903 DEBUG 24960 --- [http-nio-8080-exec-6] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:25:33.913 DEBUG 24960 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:25:47.722 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:25:47.723 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: afe499cebb324421a269c84c4b9a604d(String), wer(String), (String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), 0(Integer), wrw(String), true(Boolean), null, null, true(Boolean), null, 2022-02-17 18:25:47.722(Timestamp), 2022-02-17 18:25:47.722(Timestamp), 002861404c684917bb279b48c94ff539(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:25:47.736 DEBUG 24960 --- [http-nio-8080-exec-5] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:25:47.736 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:25:47.737 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 8b46667f28f542248857d05a8bd5044a(String), afe499cebb324421a269c84c4b9a604d(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:25:47.738 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:25:47.862 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:25:47.862 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:25:47.862 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:25:47.862 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:25:47.864 DEBUG 24960 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:25:47.868 DEBUG 24960 --- [http-nio-8080-exec-5] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 11
+2022-02-17 18:29:48.654  INFO 30876 --- [restartedMain] com.atguigu.blog.BlogApplication         : Starting BlogApplication using Java 11.0.11 on LAPTOP-48IIHFG4 with PID 30876 (D:\JavaProject\IdeaProject\blog\target\classes started by 86155 in D:\JavaProject\IdeaProject\blog)
+2022-02-17 18:29:48.655 DEBUG 30876 --- [restartedMain] com.atguigu.blog.BlogApplication         : Running with Spring Boot v2.6.2, Spring v5.3.14
+2022-02-17 18:29:48.656  INFO 30876 --- [restartedMain] com.atguigu.blog.BlogApplication         : The following profiles are active: dev
+2022-02-17 18:29:48.695  INFO 30876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-17 18:29:48.695  INFO 30876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-17 18:29:49.683  INFO 30876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-02-17 18:29:49.690  INFO 30876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-17 18:29:49.690  INFO 30876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-17 18:29:49.756  INFO 30876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-17 18:29:49.756  INFO 30876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1060 ms
+2022-02-17 18:29:49.863  INFO 30876 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2022-02-17 18:29:49.993  INFO 30876 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2022-02-17 18:29:50.610  INFO 30876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-02-17 18:29:50.864  INFO 30876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-17 18:29:50.929  INFO 30876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-02-17 18:29:50.945  INFO 30876 --- [restartedMain] com.atguigu.blog.BlogApplication         : Started BlogApplication in 2.688 seconds (JVM running for 3.862)
+2022-02-17 18:29:54.544  INFO 30876 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-17 18:29:54.545  INFO 30876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-17 18:29:54.546  INFO 30876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-17 18:29:54.805  WARN 30876 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [245] milliseconds.
+2022-02-17 18:30:02.475 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==>  Preparing: select id, name, nickname, username, passward, qq, wechat, email, type, heat_photo, create_time, update_time from t_user where username=? and passward=?
+2022-02-17 18:30:02.526 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : ==> Parameters: 123(String), a950788a262a084daf664d492e4880b8(String)
+2022-02-17 18:30:02.563 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.b.d.U.selectByUsernameAndPassward    : <==      Total: 1
+2022-02-17 18:30:04.792 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:04.793 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:04.807 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 11
+2022-02-17 18:30:04.811 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:30:04.811 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:30:04.816 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:30:07.156 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:07.157 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: afe499cebb324421a269c84c4b9a604d(String)
+2022-02-17 18:30:07.170 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:30:07.171 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:07.171 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: afe499cebb324421a269c84c4b9a604d(String)
+2022-02-17 18:30:07.174 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:07.205 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:07.206 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:07.221 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 10
+2022-02-17 18:30:08.964 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:08.964 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 86a245b110bd4de388a1dbe84f760c08(String)
+2022-02-17 18:30:08.968 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 0
+2022-02-17 18:30:08.968 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:08.968 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: 86a245b110bd4de388a1dbe84f760c08(String)
+2022-02-17 18:30:08.971 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:09.003 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:09.004 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:09.010 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 9
+2022-02-17 18:30:10.630 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:10.630 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 5bf49ff3a2a249e18d98c7a16743277f(String)
+2022-02-17 18:30:10.644 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:30:10.644 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:10.645 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: 5bf49ff3a2a249e18d98c7a16743277f(String)
+2022-02-17 18:30:10.648 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:10.673 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:10.673 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:10.677 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 8
+2022-02-17 18:30:12.251 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:12.252 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:30:12.264 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:30:12.265 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:12.265 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: 8572560ea0fa4011a7b10e6bc27dc288(String)
+2022-02-17 18:30:12.268 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:12.306 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:12.307 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:12.310 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 7
+2022-02-17 18:30:13.789 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:13.790 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 63326ad6c1894b7a945cf051ef4f6bac(String)
+2022-02-17 18:30:13.803 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:30:13.804 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:13.804 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: 63326ad6c1894b7a945cf051ef4f6bac(String)
+2022-02-17 18:30:13.806 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:13.837 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:13.838 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:13.841 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:30:15.667 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:30:15.668 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:30:15.680 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:30:15.680 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==>  Preparing: delete from t_blog where id = ?
+2022-02-17 18:30:15.680 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : ==> Parameters: 697461d122964fea8c99fb621576fcd7(String)
+2022-02-17 18:30:15.682 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.b.dao.BlogMapper.deleteByPrimaryKey  : <==    Updates: 1
+2022-02-17 18:30:15.719 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:15.719 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:15.722 DEBUG 30876 --- [http-nio-8080-exec-6] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 5
+2022-02-17 18:30:20.237 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:30:20.237 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:30:20.238 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:30:20.238 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:30:20.239 DEBUG 30876 --- [http-nio-8080-exec-10] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:30:20.241 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:30:33.060 DEBUG 30876 --- [http-nio-8080-exec-4] com.atguigu.blog.dao.BlogMapper.insert   : ==>  Preparing: insert into t_blog (id, title, content, default_picture, source, views,description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id ) values (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+2022-02-17 18:30:33.063 DEBUG 30876 --- [http-nio-8080-exec-4] com.atguigu.blog.dao.BlogMapper.insert   : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String), sfsfe(String), efasf(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), 0(Integer), efawsf(String), true(Boolean), null, null, true(Boolean), null, 2022-02-17 18:30:33.059(Timestamp), 2022-02-17 18:30:33.059(Timestamp), 6aeaae0be1d1408ba70ecf2adba5d6e7(String), b887344a8b3044249c9833765ac6a08f(String)
+2022-02-17 18:30:33.077 DEBUG 30876 --- [http-nio-8080-exec-4] com.atguigu.blog.dao.BlogMapper.insert   : <==    Updates: 1
+2022-02-17 18:30:33.077 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:30:33.078 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 790bfd6b6f5248c896bd879cf20475ba(String), dedf76fdcfe646af9a966d2ce315af9d(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:30:33.079 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:30:33.220 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:30:33.220 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:30:33.222 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:30:33.222 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:30:33.223 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:30:33.224 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:30:34.540 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:30:34.541 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:30:34.541 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:30:34.541 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:30:34.542 DEBUG 30876 --- [http-nio-8080-exec-7] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:30:34.542 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:30:34.544 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:30:34.545 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:30:34.547 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:30:34.549 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:30:34.549 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:30:34.552 DEBUG 30876 --- [http-nio-8080-exec-2] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:34:59.695  WARN 30876 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 265111
+2022-02-17 18:34:59.698  WARN 30876 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 265143
+2022-02-17 18:34:59.699  WARN 30876 --- [http-nio-8080-exec-1] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8, version : 1.2.5, lastPacketReceivedIdleMillis : 265156
+2022-02-17 18:34:59.741 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:34:59.743 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: sfsfe(String), efasfrty(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), efawsf(String), true(Boolean), null, null, true(Boolean), null, 2022-02-17 18:34:59.74(Timestamp), 6aeaae0be1d1408ba70ecf2adba5d6e7(String), b887344a8b3044249c9833765ac6a08f(String), dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:34:59.747 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:34:59.747 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:34:59.748 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:34:59.749 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:34:59.750 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:34:59.751 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 6d73a905e0d44a8789701c35344f9ce0(String), dedf76fdcfe646af9a966d2ce315af9d(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:34:59.753 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:34:59.900 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:34:59.900 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:34:59.904 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:34:59.906 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:34:59.906 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:34:59.908 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:35:01.170 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:35:01.170 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:35:01.173 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:35:01.173 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:35:01.173 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:35:01.175 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:35:01.176 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:01.176 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:35:01.178 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:35:01.179 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:35:01.180 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:01.181 DEBUG 30876 --- [http-nio-8080-exec-4] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1
+2022-02-17 18:35:06.733 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogMapper.updateByIdSelective   : ==>  Preparing: update t_blog SET title = ?, content = ?, default_picture = ?, source = ?, description = ?, appreciation = ?, copyright = ?, comment = ?, published = ?, recommend = ?, update_time = ?, type_id = ?, user_id = ? where id = ?
+2022-02-17 18:35:06.734 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogMapper.updateByIdSelective   : ==> Parameters: sfsfe(String), efasfrtyregrt(String), https://img0.baidu.com/it/u=502218550,162991900&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500(String), 原创(String), efawsfgrtg(String), true(Boolean), null, null, true(Boolean), null, 2022-02-17 18:35:06.733(Timestamp), 6aeaae0be1d1408ba70ecf2adba5d6e7(String), b887344a8b3044249c9833765ac6a08f(String), dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:06.748 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogMapper.updateByIdSelective   : <==    Updates: 1
+2022-02-17 18:35:06.748 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==>  Preparing: delete from t_blog_tag where blog_id=?
+2022-02-17 18:35:06.749 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:06.751 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.b.d.BlogAndTagMapper.deleteByBlogId  : <==    Updates: 1
+2022-02-17 18:35:06.751 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : ==>  Preparing: insert into t_blog_tag (id, blog_id, tag_id) values (?, ?, ?)
+2022-02-17 18:35:06.751 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : ==> Parameters: 0ede81f547504d3db45c205e8ea164db(String), dedf76fdcfe646af9a966d2ce315af9d(String), 36a35aea5d354810a07cd881321c6f18(String)
+2022-02-17 18:35:06.753 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogAndTagMapper.insert     : <==    Updates: 1
+2022-02-17 18:35:06.852 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:35:06.852 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==>  Preparing: select b.id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, NAME type_id, user_id from t_blog b join t_type t on b.type_id = t.id order by create_time desc
+2022-02-17 18:35:06.852 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:35:06.852 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : ==> Parameters: 
+2022-02-17 18:35:06.854 DEBUG 30876 --- [http-nio-8080-exec-1] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:35:06.854 DEBUG 30876 --- [http-nio-8080-exec-9] c.a.blog.dao.BlogMapper.selectByBlog     : <==      Total: 6
+2022-02-17 18:35:08.061 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==>  Preparing: select id, name from t_type
+2022-02-17 18:35:08.062 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : ==> Parameters: 
+2022-02-17 18:35:08.062 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==>  Preparing: select id, name from t_tag
+2022-02-17 18:35:08.062 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : ==> Parameters: 
+2022-02-17 18:35:08.063 DEBUG 30876 --- [http-nio-8080-exec-5] c.a.blog.dao.TypeMapper.selectByExample  : <==      Total: 7
+2022-02-17 18:35:08.063 DEBUG 30876 --- [http-nio-8080-exec-8] c.a.blog.dao.TagMapper.selectByExample   : <==      Total: 6
+2022-02-17 18:35:08.063 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==>  Preparing: select id, title, content, default_picture, source, views, description, appreciation, copyright, comment, published, recommend, create_time, update_time, type_id, user_id from t_blog where id = ?
+2022-02-17 18:35:08.064 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:08.065 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.b.dao.BlogMapper.selectByPrimaryKey  : <==      Total: 1
+2022-02-17 18:35:08.065 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==>  Preparing: select t.id,t.name from t_tag t join t_blog_tag b on t.id=b.tag_id where b.blog_id=?
+2022-02-17 18:35:08.067 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : ==> Parameters: dedf76fdcfe646af9a966d2ce315af9d(String)
+2022-02-17 18:35:08.068 DEBUG 30876 --- [http-nio-8080-exec-3] c.a.blog.dao.TagMapper.selectByBlogId    : <==      Total: 1

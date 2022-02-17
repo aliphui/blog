@@ -97,7 +97,7 @@
         <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.css}"/>
         <div class="field">
           <div id="md-content" style="z-index: 1 !important;">
-            <textarea placeholder="博客内容..." name="content" style="display: none" id="content" v-model="formData.content">
+            <textarea placeholder="博客内容..." style="display: none" id="content" v-model="formData.content">
             </textarea>
           </div>
         </div>
@@ -235,7 +235,7 @@
           axios.get("/admin/blog/"+id).then((res)=>{
             if (res.data.flag){
               this.formData = res.data.data.blog;//content有时候赋值失败；
-              // $("#content").text(res.data.data.blog.content);
+              $("#content").text(res.data.data.blog.content);
               this.tags = res.data.data.tags;
             }else{
               // alert("查询用户信息失败");
@@ -277,6 +277,7 @@
         //提交表单,发布博客
         submitForm(isPublished){
 
+
           //表单项是否为空验证
           if ($.trim(this.formData.title) == null || $.trim(this.formData.title)  == ''){
             this.message = '标题不能为空！';
@@ -286,7 +287,7 @@
             this.message = '请选择分类类型！';
             return false;
           };
-          if ($("#content").text() == null || $("#content").text()  == ''){
+          if ($.trim($("#content").text()) == null || $.trim($("#content").text())  == ''){
             this.message = '博客内容不能为空！';
             return false;
           };
@@ -315,7 +316,7 @@
           var id = '[[${id}]]';
           //修改Blog
           if (id !=null && id!=''){
-            axios.put("/admin/blog"+tagIg+"&id="+id,$("#formData").serialize()).then((res)=>{
+            axios.put("/admin/blog"+tagIg+"&id="+id + "&content=" + $("#content").text(),$("#formData").serialize()).then((res)=>{
               if (res.data.flag){
                 if (isPublished){
                   window.location.href = "/admin/blogs.html/publish";
@@ -331,7 +332,8 @@
           }
 
           //新建Blog
-          axios.post("/admin/blog"+tagIg,$("#formData").serialize()).then((res)=>{
+          axios.post("/admin/blog"+tagIg + "&content=" + $("#content").text(),
+                  $("#formData").serialize()).then((res)=>{
             if (res.data.flag){
               if (isPublished){
                 window.location.href = "/admin/blogs.html/publish";
