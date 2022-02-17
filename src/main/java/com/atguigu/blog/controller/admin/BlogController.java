@@ -26,7 +26,7 @@ public class BlogController {
      * 创建博客
      */
     @PostMapping
-    public R create(Blog blog, String[] tagId, HttpSession session){
+    public R create(@RequestBody Blog blog, String[] tagId, HttpSession session){
 
         //设置创建者id
         User user = (User) session.getAttribute("user");
@@ -41,8 +41,7 @@ public class BlogController {
      * @return
      */
     @PutMapping
-    public R update(Blog blog, String[] tagId, HttpSession session){
-
+    public R update(@RequestBody Blog blog, String[] tagId, HttpSession session){
         //设置修改者id
         User user = (User) session.getAttribute("user");
         if (user != null){

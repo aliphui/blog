@@ -75,7 +75,7 @@ public class AdminViewController {
             model.addAttribute("message","发布成功！");
         }
         if ("save".equals(mgs)){
-            model.addAttribute("message","保存成功！");
+            model.addAttribute("message","保存草稿成功！");
         }
         return "admin/blogs";
     }

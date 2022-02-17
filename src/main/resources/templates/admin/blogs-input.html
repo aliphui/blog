@@ -97,7 +97,7 @@
         <link rel="stylesheet" th:href="@{/lib/editormd/css/editormd.css}"/>
         <div class="field">
           <div id="md-content" style="z-index: 1 !important;">
-            <textarea placeholder="博客内容..." style="display: none" id="content" v-model="formData.content">
+            <textarea placeholder="博客内容..." style="display: none" id="content">
             </textarea>
           </div>
         </div>
@@ -202,11 +202,10 @@
         formData: {
           source: '原创',
           typeId: '',
-          content: '',
-          recommend: false,
-          copyright: false,
-          appreciation: false,
-          comment: false,
+          recommend: true,
+          copyright: true,
+          appreciation: true,
+          comment: true,
 
         },
         userInfo: {},//用户信息
@@ -310,13 +309,16 @@
             }
           }
 
+          //设置是否发布；
           $('#published').val(isPublished);
+          this.formData.content = $("#content").text();
 
           //判断是否有Id，有：修改博客，没有：新建博客
           var id = '[[${id}]]';
           //修改Blog
           if (id !=null && id!=''){
-            axios.put("/admin/blog"+tagIg+"&id="+id + "&content=" + $("#content").text(),$("#formData").serialize()).then((res)=>{
+            this.formData.id = id;
+            axios.put("/admin/blog"+tagIg,this.formData).then((res)=>{
               if (res.data.flag){
                 if (isPublished){
                   window.location.href = "/admin/blogs.html/publish";
@@ -327,13 +329,11 @@
                 alert("失败");
               }
             })
-
             return false;
           }
 
           //新建Blog
-          axios.post("/admin/blog"+tagIg + "&content=" + $("#content").text(),
-                  $("#formData").serialize()).then((res)=>{
+          axios.post("/admin/blog"+tagIg,this.formData).then((res)=>{
             if (res.data.flag){
               if (isPublished){
                 window.location.href = "/admin/blogs.html/publish";
@@ -372,7 +372,9 @@
     $('.menu.toggle').click(function () {
       $('.m-item').toggleClass('m-mobile-hide');
     });
-
+    $('.ui.dropdown').dropdown({
+      on : 'hover'
+    });
   </script>
 </body>
 </html>
