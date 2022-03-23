@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common::heat(博客发布)">
+<head th:replace="admin/common::heat(博客发布)">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>博客发布</title>
@@ -47,6 +47,31 @@
   </div>
 
   <!--中间内容-->
+
+<!--      <el-form ref="formData" :model="formData" :rules="rules" label-width="120px" :inline="true">-->
+<!--      <el-form-item label="分类" prop="typeId">-->
+<!--        <el-select v-model="formData.typeId" placeholder="请选择分类">-->
+<!--          <el-option-->
+<!--                  v-for="type in typeAll"-->
+<!--                  :key="type.id"-->
+<!--                  :label="type.name"-->
+<!--                  :value="type.id">-->
+<!--          </el-option>-->
+<!--        </el-select>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item label="标签" prop="tags" >-->
+<!--        <el-select v-model="tags" multiple placeholder="请选择标签">-->
+<!--          <el-option-->
+<!--                  v-for="tag in tagAll"-->
+<!--                  :key="tag.id"-->
+<!--                  :label="tag.name"-->
+<!--                  :value="tag.id">-->
+<!--          </el-option>-->
+<!--        </el-select>-->
+<!--      </el-form-item>-->
+<!--    </el-form>-->
+
+
   <div  class="m-container m-padded-tb-big">
     <div class="ui container">
       <form id="formData" method="post" action="#" class="ui form" v-model="formData">
@@ -73,6 +98,7 @@
               </select>
             </div>
           </div>
+
           <div class="field">
             <div class="ui left labeled action input">
               <label class="ui compact teal basic label">标签</label>
@@ -85,6 +111,7 @@
             </select>
           </div>
         </div>
+
 
         <div class="field">
           <div class="ui left labeled input">
@@ -193,6 +220,8 @@
 <script th:src="@{/lib/editormd/editormd.min.js}"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
   <script>
 
@@ -352,12 +381,8 @@
         closeMsg(){
          this.message = '';
         },
-
-
       },
     })
-
-
 
     //初始化Markdown编辑器
     $(function() {
